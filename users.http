@@ -1,0 +1,41 @@
+### Signup a new user
+POST http://localhost:3100/auth/signup
+Content-Type: application/json
+
+{
+    "email": "ramin@your-mail.de",
+    "password": "pass",
+    "whitelist": "this will be removed because white list checked in main.ts file."
+}
+
+### Singin a user with email and password
+POST http://localhost:3100/auth/signin
+Content-Type: application/json
+
+{
+    "email": "ramin@your-mail.de",
+    "password": "pass"
+}
+
+### Who am i?
+GET http://localhost:3100/auth/whoami
+
+### Singout the current user
+POST http://localhost:3100/auth/singout
+
+### Find a user by id
+GET http://localhost:3100/auth/1
+
+### Find all emails
+GET http://localhost:3100/auth?email=armin@kk.de
+
+### Update user data
+PATCH http://localhost:3100/auth/2
+Content-Type: application/json
+
+{
+    "email": "mahnaz@you.de"
+}
+
+### Delete a user by id
+DELETE http://localhost:3100/auth/2
