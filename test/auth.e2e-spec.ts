@@ -27,4 +27,16 @@ describe('Auth Controller (e2e)', () => {
         expect(email).toEqual(email);
       });
   });
+
+  it('signin test here', () => {
+    return request(app.getHttpServer())
+      .post('/auth/signup')
+      .send({email: 'fff@your-mail.de', password: 'pass'})
+      .expect(201)
+      .then(res => {
+        const {id, email} = res.body;
+        expect(id).toBeDefined();
+        expect(email).toEqual(email);
+      });
+  });
 });
